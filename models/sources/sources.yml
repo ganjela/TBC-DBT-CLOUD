@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: consumer_events
+  - name: user_events
     database: tbc_events
     schema: user_events
     tables:
