@@ -2,10 +2,10 @@ version: 2
 
 sources:
   - name: consumer_events
-    database: it_academy
-    schema: consumer_events
+    database: tbc_events
+    schema: user_events
     tables:
-      - name: consumer_registration
+      - name: user_registration
         columns:
           - name: timestamp
           - name: event_name
@@ -17,13 +17,13 @@ sources:
           - name: masked_email
           - name: preferred_language
       
-      - name: consumer_sign_in
+      - name: sign_in_event
         columns:
           - name: timestamp
           - name: event_name
           - name: user_id
       
-      - name: consumer_sign_out
+      - name: sign_out_event
         columns:
           - name: timestamp
           - name: event_name
@@ -31,7 +31,7 @@ sources:
 
 
   - name: item_events
-    database: it_academy
+    database: tbc_events
     schema: item_events
     tables:
       - name: item_view_events
@@ -44,7 +44,7 @@ sources:
 
 
   - name: cart_events
-    database: it_academy
+    database: tbc_events
     schema: cart_events
     tables:
       - name: add_to_cart_events
