@@ -14,7 +14,7 @@ movie_cart_adds as (
         item_id as movie_id,
         {{ format_date('timestamp', 'hour') }} as event_time,
         count(*) as total_cart_adds
-    from {{ source('cart_events', 'add_to_cart_events') }}
+    from {{ source('cart_events', 'added_to_cart_events') }}
     group by item_id, event_time
 ),
 
