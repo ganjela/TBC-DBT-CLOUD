@@ -5,7 +5,7 @@ with sign_ins as (
         user_id,
         {{ format_date('timestamp', 'hour') }} as event_time,
         count(*) as total_sign_ins
-    from {{ source('user_events', 'sign_in_event') }}
+    from {{ source('user_events', 'sign_in_events') }}
     group by user_id, event_time
 ),
 
@@ -14,7 +14,7 @@ sign_outs as (
         user_id,
         {{ format_date('timestamp', 'hour') }} as event_time,
         count(*) as total_sign_outs
-    from {{ source('user_events', 'sign_out_event') }}
+    from {{ source('user_events', 'sign_out_events') }}
     group by user_id, event_time
 ),
 
