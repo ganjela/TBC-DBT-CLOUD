@@ -4,4 +4,4 @@ select
     [timestamp],
     event_name,
     [user_id]
-from {{ source('consumer_events', 'consumer_sign_in') }}
+from {{ source('user_events', 'sign_in_event') }}

@@ -7,4 +7,4 @@ select
     age,
     masked_email,
     preferred_language
-from {{ source('consumer_events', 'consumer_registration') }}
+from {{ source('user_events', 'user_registration') }}
