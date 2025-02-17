@@ -32,7 +32,7 @@ cart_adds as (
         user_id,
         {{ format_date('timestamp', 'hour') }} as event_time,
         count(*) as total_items_added
-    from {{ source('cart_events', 'add_to_cart_events') }}
+    from {{ source('cart_events', 'added_to_cart_events') }}
     group by user_id, event_time
 ),
 

@@ -47,7 +47,7 @@ sources:
     database: tbc_events
     schema: cart_events
     tables:
-      - name: add_to_cart_events
+      - name: added_to_cart_events
         columns:
           - name: timestamp
           - name: event_name
