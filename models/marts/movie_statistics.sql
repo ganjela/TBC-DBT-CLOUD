@@ -20,11 +20,13 @@ movie_cart_adds as (
 
 movie_purchases as (
     select 
-        item_id as movie_id,
-        {{ format_date('timestamp', 'hour') }} as event_time,
+        a.item_id as movie_id,  
+        {{ format_date("c.timestamp", 'hour') }} as event_time,
         count(*) as total_purchases
-    from {{ source('cart_events', 'checkout_events') }}
-    group by item_id, event_time
+    from {{ source('cart_events', 'checkout_events') }} c
+    join {{ source('cart_events', 'added_to_cart_events') }} a
+      on c.cart_id = a.cart_id  
+    group by a.item_id, event_time
 )
 
 select 
