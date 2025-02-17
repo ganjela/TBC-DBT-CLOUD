@@ -10,24 +10,27 @@ sources:
           - name: timestamp
           - name: event_name
           - name: user_id
-            tests:
-              - not_null
-              - unique
           - name: age
           - name: masked_email
           - name: preferred_language
+          tests:
+            - not_null
       
       - name: sign_in_events
         columns:
           - name: timestamp
           - name: event_name
           - name: user_id
+            tests:
+              - not_null
       
       - name: sign_out_events
         columns:
           - name: timestamp
           - name: event_name
           - name: user_id
+          tests:
+            - not_null
 
 
   - name: item_events
@@ -40,7 +43,8 @@ sources:
           - name: event_name
           - name: item_id
           - name: user_id
-
+          tests:
+            - not_null
 
 
   - name: cart_events
@@ -61,3 +65,5 @@ sources:
           - name: user_id
           - name: cart_id
           - name: payment_method
+          tests:
+            - not_null

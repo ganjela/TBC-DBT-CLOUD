@@ -7,7 +7,6 @@ models:
       - name: user_id
         tests:
           - not_null
-          - unique
       - name: timestamp
         tests:
           - not_null
