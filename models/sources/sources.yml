@@ -17,13 +17,13 @@ sources:
           - name: masked_email
           - name: preferred_language
       
-      - name: sign_in_event
+      - name: sign_in_events
         columns:
           - name: timestamp
           - name: event_name
           - name: user_id
       
-      - name: sign_out_event
+      - name: sign_out_events
         columns:
           - name: timestamp
           - name: event_name
