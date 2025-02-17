@@ -1,0 +1,63 @@
+version: 2
+
+sources:
+  - name: consumer_events
+    database: it_academy
+    schema: consumer_events
+    tables:
+      - name: consumer_registration
+        columns:
+          - name: timestamp
+          - name: event_name
+          - name: user_id
+            tests:
+              - not_null
+              - unique
+          - name: age
+          - name: masked_email
+          - name: preferred_language
+      
+      - name: consumer_sign_in
+        columns:
+          - name: timestamp
+          - name: event_name
+          - name: user_id
+      
+      - name: consumer_sign_out
+        columns:
+          - name: timestamp
+          - name: event_name
+          - name: user_id
+
+
+  - name: item_events
+    database: it_academy
+    schema: item_events
+    tables:
+      - name: item_view_events
+        columns:
+          - name: timestamp
+          - name: event_name
+          - name: item_id
+          - name: user_id
+
+
+
+  - name: cart_events
+    database: it_academy
+    schema: cart_events
+    tables:
+      - name: add_to_cart_events
+        columns:
+          - name: timestamp
+          - name: event_name
+          - name: item_id
+          - name: user_id
+          - name: cart_id
+      - name: checkout_events
+        columns:
+          - name: timestamp
+          - name: event_name
+          - name: user_id
+          - name: cart_id
+          - name: payment_method
